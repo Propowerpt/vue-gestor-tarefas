@@ -90,6 +90,15 @@ function realizarPesquisa() {
   getLista();
 }
 
+async function claimTask(tarefa) {
+  try {
+    const response = await axios.post('http://127.0.0.1:8000/api/tarefas/'+tarefa.id+'/claim', {});
+    alert("Atribuição da tarefa feita com sucesso !!!");
+  } catch (error) {
+    alert(error.response.data.error);
+  }
+}
+
 
 </script>
 
@@ -120,6 +129,8 @@ function realizarPesquisa() {
         <th>{{ tarefa.titulo }}</th>
         <th>{{ tarefa.descricao }}</th>
         <th>
+          <button @click="claimTask(tarefa)">Aceitar tarefa</button>
+          &nbsp
           <button @click="selecionarIdTarefa(tarefa)">Edit</button>
           &nbsp
           <button @click="apagar(tarefa)">X</button>
