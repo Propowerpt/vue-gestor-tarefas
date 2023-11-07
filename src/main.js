@@ -5,9 +5,11 @@ import App from './App.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from './components/Home.vue'
 import ListaTarefas from './components/ListaTarefas.vue'
+import LoginForm from './components/LoginForm.vue'
 
 const routes = [
   { path: '/', component: Home },
+  { path: '/login', component: LoginForm },
   { path: '/list', component: ListaTarefas },
 ]
 

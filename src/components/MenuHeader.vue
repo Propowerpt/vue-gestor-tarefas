@@ -4,6 +4,7 @@
 <template>
   <div class="topnav">
     <router-link class="active" to="/">Home</router-link>
+    <router-link to="/login">Login</router-link>
     <router-link to="/list">Lista</router-link>
   </div>
 </template>
