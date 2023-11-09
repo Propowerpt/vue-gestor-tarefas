@@ -20,6 +20,7 @@ const opcoesOrdenar = ref([
 ])
 const opcaoSelecionada = ref('');
 const tituloPesquisa = ref('');
+const myTasksIsChecked = ref(false);
 
 onMounted(() => {
   getLista();
@@ -92,10 +93,18 @@ function realizarPesquisa() {
 
 async function claimTask(tarefa) {
   try {
-    const response = await axios.post('http://127.0.0.1:8000/api/tarefas/'+tarefa.id+'/claim', {});
+    const response = await axios.post('http://127.0.0.1:8000/api/tarefas/' + tarefa.id + '/claim', {});
     alert("Atribuição da tarefa feita com sucesso !!!");
   } catch (error) {
     alert(error.response.data.error);
+  }
+}
+
+function handleMyTasksCheckBox(){
+  if(myTasksIsChecked.value){
+    alert('Opção ativada');
+  }else{
+    alert('Opção desativada');
   }
 }
 
@@ -112,6 +121,8 @@ async function claimTask(tarefa) {
       <button>Adicionar</button>
     </form>
     <br><br>
+    <input @change="handleMyTasksCheckBox" v-model="myTasksIsChecked" type="checkbox" id="MyTasksCheckBox" name="MyTasksCheckBox">
+    <label for="MyTasksCheckBox">Mostar só as minhas tarefas</label><br>
     <select @change="ordenarPor" name="opcoes" id="opcoes" v-model="opcaoSelecionada">
       <option v-for="opcao in opcoesOrdenar" :key="opcao.value" :value="opcao.value">{{ opcao.descricao }}</option>
     </select>
