@@ -12,7 +12,8 @@
     "vue": "^3.3.4",
     "vue-axios": "^3.5.2",
     "vue-flash-message": "^0.7.2",
-    "vue-router": "^4.2.5"
+    "vue-router": "^4.2.5",
+    "vuestic-ui": "^1.8.4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.4.0",
