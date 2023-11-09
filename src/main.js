@@ -3,8 +3,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import { createRouter, createWebHistory } from 'vue-router'
-import { createVuestic } from 'vuestic-ui'
-import 'vuestic-ui/css'
+//import { createVuestic } from 'vuestic-ui'
+//import 'vuestic-ui/css'
 import Home from './components/Home.vue'
 import ListaTarefas from './components/ListaTarefas.vue'
 import LoginForm from './components/LoginForm.vue'
@@ -41,6 +41,6 @@ const router = createRouter({
 
 const app = createApp(App);
 app.use(router);
-app.use(createVuestic());
+//app.use(createVuestic());
 app.mount('#app');
 //createApp(App).use(router).mount('#app')
